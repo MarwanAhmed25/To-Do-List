@@ -1,0 +1,18 @@
+<h1>My Tasks</h1>
+<a href=" {% url 'task_create' %} ">Add Task</a>
+<table>
+    <tr>
+        <th>Item</th>
+        <th></th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{task.title}}</td>
+        <td><a href="{% url 'task' task.slug %}">view</a></td>
+        <td><a href="{% url 'task_update' task.slug %}">edit</a></td>
+        <td><a href="{% url 'task_delete' task.slug %}">delete</a></td>
+    </tr>
+    {% empty %}
+    <h3>No item exixt</h3>
+    {% endfor %}
+</table>

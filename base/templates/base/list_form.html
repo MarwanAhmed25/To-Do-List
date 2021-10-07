@@ -1,0 +1,7 @@
+<a href="{% url 'tasks' %}">Go Back</a>
+<h1>Form</h1>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{form}}
+  <input name="submit" type="submit">
+</form>
